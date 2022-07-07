@@ -4,12 +4,15 @@ import { NextPage } from 'next'
 const BNC: NextPage = () => {
   const jumpToLogin = useCallback(() => {
     window.location.href = 'bnc://app.binance.com/setting/login'
+    setTimeout(() => {
+      window.location.href = '/'
+    }, 500)
   }, [])
   return (
     <div className="flex flex-col h-screen">
       <main className="flex flex-col flex-grow">
         <h1>BNC Jump</h1>
-        <a href="bnc://app.binance.com/setting/login">login</a>
+        {/* <a href="bnc://app.binance.com/setting/login">login</a> */}
         <button onClick={jumpToLogin}>login btn</button>
       </main>
     </div>
